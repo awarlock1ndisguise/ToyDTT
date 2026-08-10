@@ -49,7 +49,6 @@ An engineer following Ferguson et al. cannot use a binary state model (correct/i
 | Decision | Do sources settle it? | Note |
 | --- | --- | --- |
 | Intertrial Interval length |No (Sources state typically 1-5 seconds )  |Assumed: Interval set to a 3 seconds delay between trial|
-| --- | --- | --- |
 | Session Ending | No (human session end based on scheduled time or clinical judgment) | Assumed: A 20-30 total trials in order for it not to loop forever |
 
 
