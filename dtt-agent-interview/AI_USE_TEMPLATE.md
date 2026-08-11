@@ -3,7 +3,8 @@
 ## 1. Tools used
 
 | Tool | Version / model, if known | What you used it for |
-| Gemini | 3.6 | Understanding code structure, drafting test case and troubleshooting state machine bugs|
+| --- | --- | --- |
+| Gemini | 3.6 | Understanding code structure, drafting test case and troubleshooting state machine bugs |
 
 
 ## 2. Tasks delegated

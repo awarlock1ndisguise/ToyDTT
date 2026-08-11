@@ -43,8 +43,7 @@ A session holds the entire lesson run, where we go through all targeted trials o
 | PRESENT_SD | asks the learner to perform the target skill| "Touch Circle" | "trial_number"=1, "target_id"= Circle "prompt_level"= independant |
 | DELIVER_REINFORCMENT | Consequence after a correct answer | Correct! That's the Circle | "reward_type": "praise" |
 | DELIVER_PROMPT | Consequence after a correct answer | Look closely! Point to the Circle | "prompt_level": "gestural_guide" |
-| SESSION_COMPLETED | The lesson is complete | Session completed. Well Done! |
-| "total_completed" = 3, "status"= completed |
+| SESSION_COMPLETED | The lesson is complete | Session completed. Well Done! | "total_completed" = 3, "status"= completed |
 
 ## 6. Handling each answer
 
@@ -79,13 +78,14 @@ The condition for reaching 'complete' is for all trials to be completed (_curren
 
 ## 12. Data recorded per trial
 
-| Field Name | Type | Exposed in|
-| trial_number| int| State & Action|
-|completed_trials| int| State Snapshot|
-|target_id| str| action data|
-|prompt_level| str| action data|
-|reward_type| str| Action Data|
-|protocol_state| str| State Snapshot|
+| Field Name | Type | Exposed in |
+| --- | --- | --- |
+| trial_number | int | State & Action |
+| completed_trials | int | State Snapshot |
+| target_id | str | action data |
+| prompt_level | str | action data |
+| reward_type | str | Action Data |
+| protocol_state | str | State Snapshot |
 
 
 ## 13. Repeated incorrect or absent answers
@@ -112,4 +112,4 @@ A strict limit of maximum 3 attempts per target item is enforced in order to for
 | Protocol rule | Source support | Applicant assumption | Code location | Test location |
 | --- | --- | --- | --- | --- |
 | DELIVER_REINFORCEMENT post-correct answers | Yes: Frank-Crawford et al; Altun & Yucesoy-Ozkan | Gives the learner something to look forward to after each question | _evaluate_answer() Line 132 | test_process_correct_answer
-| Deliver DELIVER_PROMPT when the answer is wrong or missing. | Altun & Yucesoy-Ozkan (2024) error correction. | To assist in getting a correct answer | _evaluate_answer() Line 153 | |test_process_incorrect_answer| Moves to the next target after 3 attempts | No | Yes: Prevents infinite loop | evaluate_answer() Line 141 |
+| Deliver DELIVER_PROMPT when the answer is wrong or missing. | Altun & Yucesoy-Ozkan (2024) error correction. | To assist in getting a correct answer | _evaluate_answer() Line 153 | test_process_incorrect_answer | | Moves to the next target after 3 attempts | No | Yes: Prevents infinite loop | evaluate_answer() Line 141 |
