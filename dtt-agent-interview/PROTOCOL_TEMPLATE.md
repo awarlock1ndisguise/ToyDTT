@@ -13,7 +13,7 @@ Content: The content with the different shapes and prompts and reinforcement mes
 
 ## 2. Session and trial structure
 
-A session holds the entire lesson run, where we go through all targeted trials of all shapes until all of them are finished. One trial contains the whole Stimulus-Learner Response-Consequence loop, it begins when the agent sends a status of PRESENT_SD and then it finishes when the protocol_state = "STARTING_SD" or "SESSION_COMPLETED".
+A session holds the entire lesson run, where we go through all targeted trials of all shapes until all of them are finished. One trial contains the whole Stimulus-Learner Response-Consequence loop, it begins when the agent sends a status of STARTING_SD and then it finishes when the protocol_state = "STARTING_SD" or "SESSION_COMPLETED".
 
 
 ## 3. Agent states
@@ -29,7 +29,7 @@ A session holds the entire lesson run, where we go through all targeted trials o
 
 | From | Answer / trigger | To | Actions emitted |
 | --- | --- | --- | ---|
-| IDLE | start_session() | STARTING_SD | PRESENT_SD |
+| None | start_session() | STARTING_SD | PRESENT_SD |
 | STARTING_SD | "correct" | STARTING_SD | DELIVER_REINFORCMENT |
 | STARTING_SD | "correct" | STARTING_SD | SESSION_COMPLETED |
 | STARTING_SD / PROMPTING | "incorrect" OR "no response (Attempts < 3) | PROMPTING | DELIVER_PROMPT|
@@ -111,6 +111,6 @@ A strict limit of maximum 3 attempts per target item is enforced in order to for
 
 | Protocol rule | Source support | Applicant assumption | Code location | Test location |
 | --- | --- | --- | --- | --- |
-| DELIVER_REINFORCEMENT post-correct answers | Yes: Frank-Crawford et al; Altun & Yucesoy-Ozkan | Gives the learner something to look forward to after each question | _evaluate_answer() Line 132 | test_process_correct_answer
-| Deliver DELIVER_PROMPT when the answer is wrong or missing. | Altun & Yucesoy-Ozkan (2024) error correction. | To assist in getting a correct answer | _evaluate_answer() Line 153 | test_process_incorrect_answer |
-| Moves to the next target after 3 attempts | No | Yes: Prevents infinite loop | evaluate_answer() Line 141 | --- |
+| DELIVER_REINFORCEMENT post-correct answers | Yes: Frank-Crawford et al; Altun & Yucesoy-Ozkan | Gives the learner something to look forward to after each question | _evaluate_answer() Line 153 | test_process_correct_answer
+| DELIVER_PROMPT when the answer is wrong or missing. | Altun & Yucesoy-Ozkan (2024) error correction. | To assist in getting a correct answer | _evaluate_answer() Line 170 | test_process_incorrect_answer |
+| Moves to the next target after 3 attempts | No | Yes: Prevents infinite loop | evaluate_answer() Line 164 | --- |

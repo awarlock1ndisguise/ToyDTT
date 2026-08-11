@@ -29,8 +29,7 @@ All three sources agree that a discrete trial consist of these components :
 ## 5. Procedural topics
 
 - Prompting - Frank-Crawford et al. outlines vocal, model and physical guidance prompts used in a trial in order to assist a learner.
-- Prompt fading - Frank-Crawford et al. states that increasing or decreasing the level of prompt depends on the assistance they are trying to give across trials.  "recorded if successive response prompts were issued where they either increased or decreased in level of
-assistance administered".
+- Prompt fading - Frank-Crawford et al. states that increasing or decreasing the level of prompt depends on the assistance they are trying to give across trials. 
 - Reinforcement - All sources require there to be some type of reinforcement after each performance.
 - Error correction - Altun & Yucesoy-Ozkan gives detail specific routes on multiple types of EC such as single-response repetitions, re-present until independent and more. 
 - Movement between trials - Frank-Crawford et al. defines the intertrial interval as a few seconds between the ending of one trial and the beginning of the other.
@@ -39,7 +38,7 @@ assistance administered".
 
 ## 6. Where sources disagree
 
-Ferguson et al. strictly separates correct answers between Independent Correct response vs Prompted correct response because they're different responses that require different reinforcement, one more highly rewarding than the other.
+Ferguson et al. strictly separates correct answers between Independent Correct response vs Prompted correct response because they're different responses and are recorded as such.
 On the other hand, Altun & Yucesoy-Ozkan and Frank-Crawford et al. don't distinguish correct answers between each other and every correct answer falls under the same category and same reinforcement.
 An engineer following Ferguson et al. cannot use a binary state model (correct/incorrect) instead they need to calculate for each independent or prompt correct answer their own unique reinforcements.
 
@@ -48,9 +47,8 @@ An engineer following Ferguson et al. cannot use a binary state model (correct/i
 
 | Decision | Do sources settle it? | Note |
 | --- | --- | --- |
-| Intertrial Interval length |No (Sources state typically 1-5 seconds )  |Assumed: Interval set to a 5 seconds delay between trial|
-| Session Ending | No (human session end based on scheduled time or clinical judgment) | Assumed: A 20-30 total trials in order for it not to loop forever |
-
+| Intertrial Interval length |No (Sources state typically 1-5 seconds )  | Assumed: There is no interval |
+| Session Ending | No (human session end based on scheduled time or clinical judgment) | Assumed: A 3 total trials in order for it not to loop forever |
 
 ## 8. Limitations
 

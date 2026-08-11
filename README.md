@@ -2,15 +2,15 @@
 ---
 ## What is this project about?
 
-This project is a Discrete Trial Training (DTT) simulation developed in Python. Using starter code provided by the Intelligent-Robotics-Lab, including DTTAgent class signatures (src/dtt_agent/agent.py), event schemas and response wrappers (src/dtt_agent/contracts.py), a CLI runner, and six public contract tests (tests/test_public_contract.py), I researched behavioral intervention principles and implemented a custom DTT state machine agent.
+This project is a Discrete Trial Training (DTT) simulation developed in Python. Using starter code provided by the Intelligent-Robotics-Lab, including DTTAgent class signatures (src/dtt_agent/agent.py), event schemas and response wrappers (src/dtt_agent/contracts.py), a CLI runner, and six public contract tests (tests/test_public_contract.py). I researched behavioral intervention principles and implemented a custom DTT state machine agent.
 
 ## The DTT Agent.
 
 The agent runs a mock lesson focused on **shape recognition**. A standard session consists of **3 items** (`Circle`, `Square`, and `Triangle`). All target metadata, prompt texts, and Discriminative Stimuli ($S^D$) are defined sequentially inside `config.py`.
 
----.
 
 ## Architechture
+
 A single session contains 3 sequential trials (one per shape target):
 
 1. **Stimulus Presentation ($S^D$):** The agent presents the instruction prompt to the learner based on the current target in `config.py`.

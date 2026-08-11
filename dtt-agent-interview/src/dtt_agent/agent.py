@@ -152,7 +152,9 @@ class DTTAgent:
                 contracts.make_action(
                     action_type="DELIVER_REINFORCEMENT",
                     text=f"Correct! That's the {target['label']}",
-                    data={"reward_type": "praise"},
+                    data={
+                        "reward_type": "praise"
+                        },
                 )
             )
             self._advance_or_complete_trial(actions)
@@ -161,9 +163,10 @@ class DTTAgent:
 
             if self._incorrect_attempts_on_target >= 3:
 
-                
+        
                 self._incorrect_attempts_on_target = 0
                 self._advance_or_complete_trial(actions)
+                
             else:
                 self._protocol_state = "PROMPTING"
                 actions.append(
