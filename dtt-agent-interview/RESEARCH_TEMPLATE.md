@@ -1,4 +1,4 @@
-# RESEARCH.md (template)
+# RESEARCH
 
 ## 1. What DTT is
 
@@ -48,7 +48,7 @@ An engineer following Ferguson et al. cannot use a binary state model (correct/i
 
 | Decision | Do sources settle it? | Note |
 | --- | --- | --- |
-| Intertrial Interval length |No (Sources state typically 1-5 seconds )  |Assumed: Interval set to a 3 seconds delay between trial|
+| Intertrial Interval length |No (Sources state typically 1-5 seconds )  |Assumed: Interval set to a 5 seconds delay between trial|
 | Session Ending | No (human session end based on scheduled time or clinical judgment) | Assumed: A 20-30 total trials in order for it not to loop forever |
 
 
@@ -57,6 +57,8 @@ An engineer following Ferguson et al. cannot use a binary state model (correct/i
 - Behavioral Adaptability: Working with a patient with autism for example, can be very unpredictable on how the trials can affect them emotionally. A computer cannot manage these challenging behavioral escalations.
 - Rigid Prompting Rules: Human researchers can change and add prompts according to the clients' state while an agent relies on rigid, precoded rules that cannot adapt to the situation at hand.
 - Tone: Computers lack vocal pitch, which risks the learner becoming confused on the monotone flat praises instead of a high pitch positive feedback from a human researcher.
+
+> Clinical Disclaimer: This project is an educational computer simulation built solely to demonstrate state machine architecture. It does NOT constitute clinical guidance, medical advice or a substitute for professional ABA therapy.
 
 ## 9. References
 

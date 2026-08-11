@@ -1,54 +1,37 @@
-# AI_USE.md (template)
-
-Copy this file to `AI_USE.md` and fill it in. Submit it even if you used no AI
-tools at all — in that case, say so in §1 and leave the rest brief.
-
-AI tools are allowed. Using them is neither rewarded nor penalised. What matters
-is that the disclosure is accurate and that you can explain and modify every
-part of what you submitted.
-
----
+# AI_USE.md
 
 ## 1. Tools used
 
 | Tool | Version / model, if known | What you used it for |
-| --- | --- | --- |
-|  |  |  |
+| Gemini | 3.6 | Understanding code structure, drafting test case and troubleshooting state machine bugs|
 
-If you used none, write "None" here and skip to §5.
 
 ## 2. Tasks delegated
 
-The important prompts or tasks you handed to an AI tool. Paste or paraphrase the
-prompts that actually shaped the submission — not every keystroke.
+Asked AI to break down the code provided for this project, into plain English.  
+The important prompts or tasks you handed to an AI tool. 
+Asked the AI to write test cases in tests/test_my_protocol.py to check that state updates and answer checks worked correctly.
+Asked the AI to code the checks for valid messages, duplicate message IDs, active session status and handing off answers to be evaluated.
 
 ## 3. Generated code and text you kept
 
-Which parts of the submission originated with an AI tool and remain in it.
-File and function level is enough. Note anything you kept unchanged.
+1. Test_my_protocol.py: Kept generated test cases for checking correct answers, wrong answers, missing responses, multiple retry attempts and session termination.
+2. 3 attempts target retry cap logic.
+3. process() in agent.py: Kept the structure for event validation, duplicate event checking, and active status validation.
 
 ## 4. Verification
 
-How you checked what you kept: tests you wrote against it, behaviour you traced
-by hand, sources you opened and read yourself.
-
-**Sources especially.** If an AI tool suggested a citation, say whether you
-opened it and confirmed it exists, is real, and actually says what you claim.
-Invented or unverified citations are a serious problem.
+Ran pytest & tests/test_my_protocol.py to ensure all unit tests passed. Ran scenario files via the command line using python -m dtt_agent --session-id demo < scenarios/<file_name>.jsonl to verify CLI outputs and catch error codes. 
 
 ## 5. One suggestion you accepted, and one you rejected
 
-- **Accepted:** what it was, and why you agreed with it.
-- **Rejected or changed:** what it was, what was wrong with it, and what you did
-  instead.
-
-If you used no AI tools, describe instead one design suggestion you considered
-from any source (documentation, a colleague, your own first draft) and rejected.
+- **Accepted:** Accepted the suggestion to cache processed responses in self._responses_by_event_id. This ensures that if a duplicate event_id is sent, the agent immediately returns the saved response without double-counting if the exact same message gets sent twice.
+- **Rejected or changed:** Rejected to implement dynamic least-to-most prompt fading and multi-tier praise levels across the session. Instead, kept prompt levels static (gestural_guide) and praise uniform (DELIVER_REINFORCEMENT) to prevent overcomplicating the state machine logic.
 
 ## 6. Statement
 
 > I am responsible for every source, statement, design choice, and line of code
 > in this submission. I can explain and modify any part of it.
 
-Name:
-Date:
+Name: Ana Begaj
+Date: 08/11/2026
