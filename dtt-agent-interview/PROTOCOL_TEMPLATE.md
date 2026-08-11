@@ -19,16 +19,17 @@ A session holds the entire lesson run, where we go through all targeted trials o
 ## 3. Agent states
 
 | `protocol_state` | Meaning | `status` reported alongside |
-| None| waiting for start_session() | 'idle' |
-| STARTING_SD| beginning of a trial, presenting stimulus| 'running'|
-| PROMPTING | Giving a prompt assistance after an incorrect or unanswered question| 'running'|
-|SESSION_COMPLETED|All lesson targets have been finished| 'complete'|
+| --- | --- | --- |
+| None | waiting for start_session() | 'idle' |
+| STARTING_SD| beginning of a trial, presenting stimulus | 'running' |
+| PROMPTING | Giving a prompt assistance after an incorrect or unanswered question | 'running' |
+| SESSION_COMPLETED | All lesson targets have been finished | 'complete' |
 
 ## 4. Allowed transitions
 
 | From | Answer / trigger | To | Actions emitted |
 | IDLE | start_session() | STARTING_SD | PRESENT_SD |
-| STARTING_SD | "correct" | STARTING_SD | DELIVER_REINFORCMENT  |
+| STARTING_SD | "correct" | STARTING_SD | DELIVER_REINFORCMENT |
 | STARTING_SD | "correct" | STARTING_SD | SESSION_COMPLETED |
 | STARTING_SD / PROMPTING | "incorrect" OR "no response (Attempts < 3) | PROMPTING | DELIVER_PROMPT|
 | STARTING_SD / PROMPTING | "incorrect" OR "no response (Attempts >= 3, next target exits) | PROMPTING | DELIVER_PROMPT -> STARTING_SD|
