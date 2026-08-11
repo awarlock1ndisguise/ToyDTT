@@ -112,4 +112,4 @@ A strict limit of maximum 3 attempts per target item is enforced in order to for
 | Protocol rule | Source support | Applicant assumption | Code location | Test location |
 | --- | --- | --- | --- | --- |
 | DELIVER_REINFORCEMENT post-correct answers | Yes: Frank-Crawford et al; Altun & Yucesoy-Ozkan | Gives the learner something to look forward to after each question | _evaluate_answer() Line 132 | test_process_correct_answer
-| Deliver DELIVER_PROMPT when the answer is wrong or missing. | Altun & Yucesoy-Ozkan (2024) error correction. | To assist in getting a correct answer | _evaluate_answer() Line 153 | test_process_incorrect_answer | | Moves to the next target after 3 attempts | No | Yes: Prevents infinite loop | evaluate_answer() Line 141 |
+| Deliver DELIVER_PROMPT when the answer is wrong or missing. | Altun & Yucesoy-Ozkan (2024) error correction. | To assist in getting a correct answer | _evaluate_answer() Line 153 | test_process_incorrect_answer || Moves to the next target after 3 attempts | No | Yes: Prevents infinite loop | evaluate_answer() Line 141 |
