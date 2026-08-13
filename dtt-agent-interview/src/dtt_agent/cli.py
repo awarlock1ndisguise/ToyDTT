@@ -1,33 +1,3 @@
-"""JSON Lines runner for the agent.
-
-Usage::
-
-    python -m dtt_agent --session-id demo --input scenarios/mixed_answers.jsonl
-
-    # equivalent, reading standard input
-    python -m dtt_agent --session-id demo < scenarios/mixed_answers.jsonl
-
-``--input`` exists because PowerShell has no ``<`` redirection; the two forms
-behave identically everywhere else.
-
-The runner is deliberately thin and protocol-agnostic:
-
-1. construct the agent,
-2. call ``start_session()`` and print its output as one JSON line,
-3. read one JSON object per line of input,
-4. call ``process()`` for each one and print one JSON line per input line,
-5. keep reading until EOF -- even after the agent reaches a terminal state, so
-   that whatever it does with post-terminal events stays visible,
-6. answer a malformed line with a structured ``INVALID_JSON`` line instead of
-   crashing.
-
-Blank lines are ignored. Output lines have sorted keys so two runs of the same
-scenario can be compared with ``diff``.
-
-This file already satisfies the CLI contract; you should not need to change it,
-but you may if your design calls for it.
-"""
-
 from __future__ import annotations
 
 import argparse

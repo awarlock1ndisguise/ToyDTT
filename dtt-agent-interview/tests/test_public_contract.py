@@ -1,16 +1,3 @@
-"""Public contract tests.
-
-These tests check the *provided* software contract and nothing else. They say
-nothing about how a session should be taught, how many attempts an answer gets,
-what your agent should say, or when a session should end -- those are yours to
-research, specify, and test.
-
-They pass against the untouched starter skeleton, and they must still pass once
-you have implemented your protocol. Add your own tests in this directory (for
-example ``tests/test_my_protocol.py``); the protocol tests are a graded part of
-the submission.
-"""
-
 import json
 import subprocess
 import sys

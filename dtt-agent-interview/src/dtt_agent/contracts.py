@@ -1,20 +1,3 @@
-"""Provided data contracts for the simulated teaching agent.
-
-This module is part of the scaffolding you are given. It describes *software*
-contracts only:
-
-* the shape of an incoming child-answer event,
-* the shape of the response envelope your agent returns,
-* the small set of vocabulary constants those shapes rely on.
-
-Nothing in this file expresses a teaching procedure, and nothing here decides
-what your agent should do with an answer. Those decisions are yours to research,
-specify, and implement.
-
-You may extend this module (extra error codes, extra helpers) as long as the
-envelope shape described below stays compatible.
-"""
-
 from __future__ import annotations
 
 import json

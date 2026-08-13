@@ -162,11 +162,10 @@ class DTTAgent:
             self._incorrect_attempts_on_target += 1  
 
             if self._incorrect_attempts_on_target >= 3:
-
         
                 self._incorrect_attempts_on_target = 0
                 self._advance_or_complete_trial(actions)
-                
+
             else:
                 self._protocol_state = "PROMPTING"
                 actions.append(
